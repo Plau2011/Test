@@ -1,0 +1,34 @@
+<h1>Lista Edificios</h1>
+
+<br>
+<br>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID edificio</th>
+      <th>Nombre del edificio</th>
+      <th>Dirección</th>
+      <th>Ciudad</th>
+      <th>Departamentos</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @edificios.each do |edificio| %>
+      <tr>
+        <td><%= edificio.id %></td>
+        <td><%= edificio.nombre %></td>
+        <td><%= edificio.direccion %></td>
+        <td><%= edificio.ciudad %></td>
+        <td><%= button_to 'Mostrar', edificio, :method => 'get' %></td>
+      </tr>
+
+    <% end %>
+
+  </tbody>
+</table>
+<button><%= link_to 'Agrega un nuevo Edificio', new_building_path %></button>
+<button><%= link_to 'Ir a Departamentos', departamentos_path %></button>
+<button><%= link_to 'Ir al Inicio', root_path %></button>
+

@@ -1,0 +1,19 @@
+<h1>Departamentos</h1>
+
+<div>
+    <td>ID del departamento: </td>
+    <%= @departamentos.id %>
+</div>
+<div>
+    <td>Número del Departamento: </td>
+    <%= @departamentos.numero %>
+</div>
+<div>
+    <td>Nombre del edificio: </td>
+    <%= Building.find(@departamentos.building_id).nombre %>
+</div>
+
+<br>
+<button><%= link_to 'Volver a Edificios', edificios_path %></button>
+<button><%= link_to 'Volver a Departamentos', departamentos_path %></button>
+<button><%= link_to 'Volver al Inicio', root_path %></button>

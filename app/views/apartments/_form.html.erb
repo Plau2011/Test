@@ -1,0 +1,18 @@
+<%= form_with(model: @apartment) do |form| %>
+
+    <div>
+        <%= form.label :numero %>
+        <%= form.text_field :numero %>
+    </div>
+<br>
+    <div>
+        <%= form.label :building_id, 'ID del Edificio' %>
+        <%= form.collection_select :building_id, Building.order(:nombre), :id, :nombre, include_blank: "Edificios" %>
+    </div>
+<br>
+    <div>
+        <%= form.submit 'Guardar datos' %>
+        <button><%= link_to 'Volver al Departamentos', departamentos_path %></button>
+        <button><%= link_to 'Volver al Edificios', edificios_path %></button>
+    </div>
+<% end %>

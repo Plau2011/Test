@@ -1,0 +1,41 @@
+<h1>Edificio</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID edificio</th>        
+            <th>Nombre del edificio</th>
+            <th>Dirección</th>
+            <th>Ciudad</th>
+        </tr>
+    </thead>
+    <tr>
+        <td><%= @edificio.id %></td>
+        <td><%= @edificio.nombre %></td>
+        <td><%= @edificio.direccion %></td>
+        <td><%= @edificio.ciudad %></td>
+    </tr>
+</table>
+<br>
+<br>
+    <h1>Departamentos pertenecientes al Edificio</h1>
+        
+        <div>
+        <% @departamentos = Apartment.where(building_id: @edificio.id) %>               
+            <tr>
+            <th>Número departamento: </th>       
+            
+                <% @departamentos.each do |departamento| %>                      
+                    <tr>
+                    <td><%= departamento.id %></td>
+                    <td><%= departamento.numero %></td>        
+                </tr>
+            </tr>
+        
+        <% end %>
+        </div>
+<br>
+<div>
+    <button><%= link_to 'Volver a Edificios', edificios_path %></button>
+    <button><%= link_to 'Volver a Departamentos', departamentos_path %></button>
+    <button><%= link_to 'Volver al Inicio', root_path %></button>
+</div>

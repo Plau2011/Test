@@ -1,0 +1,22 @@
+<%= form_with(model: @building) do |form| %>
+
+    <div>
+        <%= form.label :nombre %>
+        <%= form.text_field :nombre %>
+    </div>
+<br>
+    <div>
+        <%= form.label :direccion %>
+        <%= form.text_field :direccion %>
+    </div>
+<br>
+<div>
+        <%= form.label :ciudad %>
+        <%= form.text_field :ciudad %>
+    </div>
+<br>
+    <div>
+        <%= form.submit 'Guardar' %>
+        <button><%= link_to 'Volver a Edificios', edificios_path %></button> 
+    </div>
+<% end %>

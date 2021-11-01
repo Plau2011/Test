@@ -1,0 +1,28 @@
+<h1>Lista Departamentos</h1>
+
+<br>
+<br>
+<table>
+  <thead>
+    <tr>
+      <th>Número del departamento</th>
+      <th>Nombre del edificio al que pertenece</th>
+      <th>ID Edificio</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% Apartment.all.each do |departamento| %>
+      <tr>
+      <td><%= departamento.numero %></td> 
+      <td><%= Building.find(departamento.building_id).nombre %></td>
+      <td><%= Building.find(departamento.building_id).id %></td>    
+      <td><%= button_to 'Mostrar', departamento, :method => 'get' %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+<button><%= link_to 'Agrega un nuevo Departamento', new_apartment_path %></button>
+<button><%= link_to 'Volver a Edificios', edificios_path %></button>
+<button><%= link_to 'Volver al Inicio', root_path %></button>
